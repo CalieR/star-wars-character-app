@@ -1,0 +1,122 @@
+@import './styles/variables.scss';
+@import './styles/mixins.scss';
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: $background-color;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: $star-wars-yellow;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: bolder;
+  margin: 0;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  margin: 20px 0;
+}
+
+.pagination-button {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: medium;
+  width: 120px;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 1s;
+  border: none;
+  @include hover-state;
+}
+
+.character-cards-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.character-card {
+  height: 283px;
+  width: 241px;
+  padding: 10px;
+  margin: 20px;
+  border: 5px solid whitesmoke;
+  border-radius: $border-radius;
+  @include border-hover-state;
+  img {
+    border-radius: $border-radius;
+    margin: 10px;
+  }
+}
+
+.character-details-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.character-details-modal {
+  background-color: black;
+  color: silver;
+  border: 10px solid $star-wars-yellow;
+  border-radius: $border-radius;
+  padding: 20px;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  td:first-of-type {
+    text-align: left;
+    font-weight: bold;
+    padding-right: 20px;
+  }
+  td:last-of-type {
+    text-align: right;
+  }
+}
+
+.modal-title {
+  text-decoration: underline;
+}
+
+@media (min-width: #{map-get($breakpoints, phone)}) and (max-width: #{map-get($breakpoints, tablet)}) {
+  .character-cards-list {
+    flex-direction: column;
+  }
+}

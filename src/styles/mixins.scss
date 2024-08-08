@@ -1,0 +1,16 @@
+@mixin hover-state {
+  &:hover:not(:disabled) {
+    background-color: $star-wars-yellow;
+    color: black;
+  }
+  &:hover:disabled {
+    cursor: not-allowed;
+  }
+}
+
+@mixin border-hover-state {
+  &:hover {
+    border: 5px solid $star-wars-yellow;
+    cursor: pointer;
+  }
+}
