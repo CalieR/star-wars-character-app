@@ -16,6 +16,7 @@ Not an exhaustive list, but here are some things that would enhance the app or n
 - Fix the modal so it covers the entire page on all screen sizes
 - Modal should close on `esc` key press or clicking outside content
 - Break styles into separate component stylesheets
+- Add some tests, to assert the UI is rendering as expected, do buttons perform the expected actions etc.
 - Make the app more attractive: 
   - put the heading in a nav bar with a star wars style font, maybe use a logo
   
